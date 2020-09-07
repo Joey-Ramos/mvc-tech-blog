@@ -23,7 +23,7 @@
 
     <div class="navbar-brand navbar-center">
         <div class="navbar-item">
-            <p class="is-white">Tech Blog</p>
+            <p class="is-white">The Tech Blog</p>
         </div>
     </div>
 
@@ -33,9 +33,15 @@
           <a class="button is-primary">
             <strong>Sign up</strong>
           </a>
+          {{#if loggedIn }}
           <a class="button is-light">
+              Log Out
+          </a>
+          {{else}}
+          <a href="/login" class="button is-light">
             Log in
           </a>
+          {{/if }}
         </div>
       </div>
     </div>
