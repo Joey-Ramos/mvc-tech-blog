@@ -1,12 +1,22 @@
 <div class="comments">
   {{#each this}}
   <section class="comment">
-    <div class="meta">
-      {{user.username}} on {{format_date created_at}}
-    </div>
-    <div class="text">
-      {{comment_text}}
-    </div>
+    <article class="media">
+      <figure class="media-left">
+        <p class="image is-64x64">
+          <img src="https://bulma.io/images/placeholders/128x128.png">
+        </p>
+      </figure>
+      <div class="media-content">
+        <div class="content">
+          <p>
+            <strong>{{user.username}}</strong> <small>{{user.email}}</small> on <small>{{format_date created_at}}</small>
+            <br>
+            {{comment_text}}
+          </p>
+        </div>
+      </div>
+    </article>
   </section>
   {{/each}}
 </div>

@@ -1,22 +1,22 @@
 
 {{!-- Can't reuse the post-info partial here, because the title is an editable form field --}}
 <article>
-  <a href="/dashboard"> &larr; Back to dashboard</a>
-  <h2>
+  <a class="button is-link" href="/dashboard"> &larr; Back to dashboard</a>
+  <h2 class="title">
     Edit Post
   </h2>
   <form class="edit-post-form">
     <div>
-      <input name="post-title" type="text" value="{{post.title}}" />
-      <span>({{format_url post.post_url}})</span>
+      <input class="input is-primary" placeholder="Edit Title" name="post-title" type="text" value="{{post.title}}" />
+      <textarea class="textarea is-info" placeholder="Edit Blog Post Here">{{ post.post_url}}</textarea>
     </div>
     <div>
       {{post.vote_count}} {{format_plural "point" post.vote_count}} by you on {{format_date post.created_at}}
       |
       <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
     </div>
-    <button type="submit">Save post</button>
-    <button type="button" class="delete-post-btn">Delete post</button>
+    <button class="button is-success" type="submit">Save post</button>
+    <button type="button" class="delete-post-btn button is-danger">Delete post</button>
   </form>
 </article>
 
@@ -25,11 +25,11 @@
 {{!-- Form for adding new comments and then list the post's current comments underneath --}}
 <form class="comment-form">
   <div>
-    <textarea name="comment-body"></textarea>
+    <textarea class="textarea" placeholder="Add Comment" name="comment-body"></textarea>
   </div>
 
   <div>
-    <button type="submit">add comment</button>
+    <button class="button is-info" type="submit">add comment</button>
   </div>
 </form>
 

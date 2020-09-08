@@ -1,30 +1,19 @@
-{{!-- <article class="post">
-  <div class="title">
-    <a href="{{post_url}}" target="_blank">{{title}}</a>
-    <span>({{format_url post_url}})</span>
-  </div>
-  <div class="meta">
-    {{vote_count}} {{format_plural "point" vote_count}} by {{user.username}} on {{format_date created_at}}
-    |
-    <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
-  </div>
-</article> --}}
-
 <div class="tile is-ancestor">
   <div class="tile is-4 is-vertical is-parent">
-    <div class="tile is-child box">
+    <div class="tile is-child box notification is-info">
       <p class="title">By {{user.username}} on {{format_date created_at}}</p>
       <p>For future development, This area will include links to user's socials and bio.</p>
     </div>
-    <div class="tile is-child box">
+    <div class="tile is-child box notification is-warning">
       <p class="title">Comments</p>
       <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
     </div>
   </div>
   <div class="tile is-parent">
-    <div class="tile is-child box">
-      <p class="title">{{title}}</p>
-      <p></p>
+    <div class="tile is-child box notification is-primary">
+      <a href="/post/{{id}}" target="_blank" class="title post-link">{{title}}</a>
+      {{!-- <p class="title">{{title}}</p> --}}
+      <p>{{post_url}}</p>
     </div>
   </div>
 </div>
